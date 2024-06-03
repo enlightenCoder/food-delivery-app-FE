@@ -1,0 +1,21 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-4 mb-4" *ngFor="let restaurant of restaurantList">
+      
+            <div class="card">
+                <img [src] ="'assets/restaurants/' + getRandomImage()" class="card-img-top" alt="{{ restaurant.name }}" width="50" height="200" />
+                <div class="card-body">
+                    <div class="card-title">{{restaurant.name}}</div>
+                    <div class="card-text">
+                        <strong>Ratings :</strong>
+                        <span *ngFor="let star of restaurant.stars">
+                          
+                            &nbsp; <i class="fa fa-star" style="font-size:17px;color:goldenrod"></i> &nbsp;
+                        </span>
+                    </div>
+                    <button class="btn btn-primary" (click)="orderNow(restaurant.id)">Order Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+.username{
+    color: bisque;
+    font-weight: bold;
+    padding-left: 20px;
+}
+
+.bg-primary{
+    background-color: rgba(15, 15, 120, 0.935) !important;;
+}

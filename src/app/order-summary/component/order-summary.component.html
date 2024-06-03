@@ -1,0 +1,47 @@
+<div class="container mt-5">
+    <div class="row">
+        <marquee behavior="scroll" direction="right"><h2 class="text-primary">Order Summary</h2></marquee>
+    </div>
+
+    <div class="row">
+        <div class="col-md-5 offset-md-4" *ngIf="showDialog">
+            <h3 class="text-success">Order Placed !</h3>
+            <p>Order has successfully been placed !</p>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal" (click)="closeDialog()">
+              Close
+            </button>
+          </div>
+    </div>
+
+
+    <div class="row mt-2">
+        <div class="col-10">
+            <table class="table table-success">
+                <thead>
+                <tr>
+                    <th scope="col">Item</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Price</th>
+                </tr>
+                </thead>
+                <tbody *ngFor="let food of orderSummary.foodItemList">
+                    <tr>
+                        <td>{{food.itemName}}</td>
+                        <td>{{food.quantity}}</td>
+                        <td>{{food.price}} &nbsp;&nbsp;&nbsp; = {{food.quantity * food.price}}</td> 
+                    </tr>
+                </tbody>
+            </table>
+            <tr>  
+                <td></td>
+                <td><em><strong>Total Price </strong></em></td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong class="text-grey ml-5">{{total | currency:'MUR '}}</strong></td>     
+            </tr>
+            <button class="btn btn-primary mt-3" (click)="saveOrder()">Place Order</button>
+        </div>
+    </div>
+
+</div>
+
+
+  
