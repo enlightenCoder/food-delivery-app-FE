@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
-import { API_URL_RL } from "../../constant/url";
 import { HttpClient } from "@angular/common/http";
 import { Observable, catchError, throwError } from "rxjs";
+import { K8ExternalIp } from "../../constant/url";
 
 
 @Injectable({
@@ -9,7 +9,7 @@ import { Observable, catchError, throwError } from "rxjs";
 })
 export class RestaurantService {
 
-    private apiUrl:string = API_URL_RL+'/restaurant/fetchAllRestaurants';
+    private apiUrl:string = K8ExternalIp+'/restaurant/fetchAllRestaurants';
 
     // constructor Injection
     constructor(private http : HttpClient){}

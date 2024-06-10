@@ -8,6 +8,6 @@ RUN npm run build
 
 # Stage 2: Serve the angular application using nginx
 FROM nginx:alpine
-COPY --from=build /app/dist/food-delivery-app /usr/share/nginx/html
+COPY --from=build /app/dist/food-delivery-app/browser /usr/share/nginx/html
 EXPOSE 80
 CMD ["nginx", "-g","daemon off;"]
